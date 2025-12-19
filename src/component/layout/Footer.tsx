@@ -1,6 +1,6 @@
 import Container from "./Container";
 import { profile } from "../../data/profile";
-import { Github, Linkedin, Dribbble, ArrowUpRight, ChevronUp } from "lucide-react";
+import { Github, Linkedin, Dribbble, ArrowUpRight } from "lucide-react";
 
 function SocialIcon({
   href,
