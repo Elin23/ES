@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* إذا بدك Dark/Light toggle بالـ .dark class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+html, body { height: 100%; }
+* { -webkit-tap-highlight-color: transparent; }
+
+::selection { background: rgba(217, 70, 239, 0.25); }
+
+@utility text-gradient {
+  @apply bg-gradient-to-r from-fuchsia-500 via-indigo-500 to-cyan-500 bg-clip-text text-transparent;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 90px;
+}
