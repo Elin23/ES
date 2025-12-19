@@ -6,7 +6,6 @@ import Achievements from "../component/sections/Achievements";
 import Contact from "../component/sections/Contact";
 import Experience from "../component/sections/Experience";
 import Skills from "../component/sections/Skills";
-import UIUXProjects from "../component/sections/UIUXProjects";
 import WebProjects from "../component/sections/WebProjects";
 import ScrollToTop from "../component/ui/ScrollToTop";
 
