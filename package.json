@@ -20,6 +20,7 @@
     "postprocessing": "^6.38.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "resend": "^6.8.0",
     "styled-components": "^6.1.19",
     "tailwindcss": "^4.1.18",
     "three": "^0.182.0"
