@@ -113,7 +113,7 @@ export default function About() {
                 <StatRow
                   icon={<GraduationCap className="h-4 w-4 text-zinc-700 dark:text-zinc-200" />}
                   label="Education"
-                  value="Informatics Engineering (Software) — SVU"
+                  value="Informatics Engineering (Software Development) — SVU"
                 />
                 <StatRow
                   icon={<Timer className="h-4 w-4 text-zinc-700 dark:text-zinc-200" />}

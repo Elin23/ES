@@ -81,6 +81,14 @@ export const profile: Profile = {
 
     webProjects: [
         {
+            title: "Learnify Courses",
+            image: "/imgs/project-9.png",
+            live: "https://learnify-courses-lime.vercel.app/",
+            github: "https://github.com/Elin23/LearnifyCourses",
+            tags: ["React", "TypeScript", "Tailwind"],
+            desc: "An online courses platform featuring a clean UI, course listings, and a responsive design focused on user-friendly learning experiences.",
+        },
+        {
             title: "Estatien | Real Estate",
             image: "/imgs/project-1.png",
             live: "https://estatein-team-x1.netlify.app/",
@@ -110,7 +118,7 @@ export const profile: Profile = {
             live: "https://elin23.github.io/TheBlog-task-6-/",
             github: "https://github.com/Elin23/TheBlog-task-6-",
             tags: ["React", "TypeScript", "Tailwind", "Redux"],
-            desc: "visually appealing solution for managing their finances.",
+            desc: "A blogging platform UI that focuses on content readability, clean design, and structured presentation of articles.",
         },
         {
             title: "Tours 2 Tuscany ",
@@ -118,7 +126,7 @@ export const profile: Profile = {
             live: "https://tours2-tuscany.vercel.app/",
             github: "https://github.com/Elin23/Tours2Tuscany-task-7-",
             tags: ["Next.js", "TypeScript", "Tailwind"],
-            desc: "YourBank is a digital banking platform designed for users seeking an efficient and visually appealing solution for managing their finances.",
+            desc: "A travel website showcasing tour packages with engaging visuals, clear sections, and a responsive user experience.",
         },
         {
             title: "Little Learners ",
@@ -126,7 +134,7 @@ export const profile: Profile = {
             live: "https://little-learners-five.vercel.app/",
             github: "https://github.com/Elin23/Task-3-Little-Learners",
             tags: ["React", "JavaScript", "CSS"],
-            desc: "YourBank is a digital banking platform designed for users seeking an efficient and visually appealing solution for managing their finances.",
+            desc: "An educational website designed for children, featuring friendly visuals, simple navigation, and an engaging layout.",
         },
         {
             title: "Flora ",
@@ -134,7 +142,7 @@ export const profile: Profile = {
             live: "https://elin23.github.io/task-4-flora/",
             github: "https://github.com/Elin23/task-4-flora",
             tags: ["React", "TypeScript", "CSS"],
-            desc: "YourBank is a digital banking platform designed for users seeking an efficient and visually appealing solution for managing their finances.",
+            desc: "A visually appealing landing page for a floral brand, focusing on aesthetics, smooth layout, and responsive design.",
         },
         {
             title: "SawBook ",
@@ -142,7 +150,7 @@ export const profile: Profile = {
             live: "https://book-saw-ten.vercel.app/",
             github: "https://github.com/Elin23/BookSaw",
             tags: ["HTML", "JavaScript", "CSS"],
-            desc: "YourBank is a digital banking platform designed for users seeking an efficient and visually appealing solution for managing their finances.",
+            desc: "A bookstore website that displays books in a structured way with simple interactions and a clean, classic design.",
         },
     ],
 
@@ -186,15 +194,15 @@ export const profile: Profile = {
             place: "Prokoders (Remote)",
             position: "Front-End Development Intern",
             from: "Nov 2025",
-            to: "Present",
+            to: "Jan 2026",
             desc: "Participated in structured, discussion-based sessions covering advanced front-end concepts. Completed intensive, high-level tasks with a strong focus on performance optimization and industry best practices.",
         },
         {
             place: "Focal X Agency",
-            position: "Front-End Development Intern (Beginner Level)",
-            from: "Aug 2024",
-            to: "Jan 2025",
-            desc: "Completed structured training in HTML, CSS, JavaScript, Tailwind CSS, and React. Led the final project team and delivered the highest-rated project among all submissions.",
+            position: "UI/UX Intern",
+            from: "Aug 2025",
+            to: "Feb 2026",
+            desc: "Assisted in designing wireframes, prototypes, and user flows. Conducted user research and usability testing to enhance usability and overall user experience.",
         },
         {
             place: "Focal X Agency",
@@ -205,11 +213,12 @@ export const profile: Profile = {
         },
         {
             place: "Focal X Agency",
-            position: "UI/UX Intern",
-            from: "Aug 2025",
-            to: "Present",
-            desc: "Assisted in designing wireframes, prototypes, and user flows. Conducted user research and usability testing to enhance usability and overall user experience.",
+            position: "Front-End Development Intern (Beginner Level)",
+            from: "Aug 2024",
+            to: "Jan 2025",
+            desc: "Completed structured training in HTML, CSS, JavaScript, Tailwind CSS, and React. Led the final project team and delivered the highest-rated project among all submissions.",
         },
+
     ],
 
     achievements: [
@@ -237,5 +246,5 @@ export const profile: Profile = {
 
 
     about:
-        "I’m Ellin Shaya, a 4th-year Informatics Engineering student (Software Engineering) at the Syrian Virtual University. I’m a fast learner who enjoys turning complex requirements into clear plans, structured timelines, and polished interfaces. I combine strong analytical thinking with creative UI execution, and I’m known for reliability, leadership, and delivering on time.",
+        "I’m Ellin Shaya, an Informatics Engineering (Software Engineering) student at the Syrian Virtual University, with an expected graduation year of 2026. I’m a fast learner who enjoys turning complex requirements into clear plans, structured timelines, and polished interfaces. I combine strong analytical thinking with creative UI execution, and I’m known for reliability, leadership, and delivering on time.",
 };

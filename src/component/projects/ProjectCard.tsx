@@ -28,114 +28,107 @@ export default function ProjectCard({
 }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 14 }}
+      initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ y: -6 }}
-      className="min-w-0"
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.45 }}
+      whileHover={{ y: -4 }}
+      className="min-w-0 h-full"
     >
-      <Card className="group relative overflow-hidden shadow-glow">
-        {/* decorative gradient border */}
-        <div className="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
-          <div className="absolute -inset-24 bg-[radial-gradient(circle_at_20%_20%,rgba(217,70,239,0.22),transparent_55%),radial-gradient(circle_at_80%_20%,rgba(99,102,241,0.16),transparent_55%),radial-gradient(circle_at_50%_90%,rgba(34,211,238,0.12),transparent_55%)]" />
-        </div>
+      <Card className="group relative w-full max-w-[340px] overflow-hidden rounded-3xl border border-zinc-200/70 bg-white shadow-sm transition hover:shadow-lg dark:border-white/10 dark:bg-zinc-950">
+        {/* Cover */}
+        <div className="relative aspect-[16/9] overflow-hidden">
+          <img
+            src={image}
+            alt={title}
+            loading="lazy"
+            className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]"
+          />
 
-        <div className="relative">
-          {/* media */}
-          <div className="relative aspect-[16/9] overflow-hidden">
-            <img
-              src={image}
-              alt={title}
-              loading="lazy"
-              className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.08]"
-            />
+          {/* overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent opacity-90" />
 
-            {/* cinematic overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-transparent opacity-70 transition group-hover:opacity-85" />
+          {/* quick actions */}
+          <div className="absolute right-3 top-3 flex gap-2">
+            <a
+              href={primaryHref}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={primaryLabel}
+              className="grid h-9 w-9 place-items-center rounded-2xl border border-white/15 bg-black/35 backdrop-blur transition hover:bg-black/55"
+            >
+              <ExternalLink className="h-4 w-4 text-white" />
+            </a>
 
-            {/* shine sweep */}
-            <div className="pointer-events-none absolute -left-1/3 top-0 h-full w-1/2 rotate-12 bg-white/10 blur-xl opacity-0 transition duration-700 group-hover:opacity-100 group-hover:left-[120%]" />
-
-            {/* top-right actions (reveal on hover) */}
-            <div className="absolute right-3 top-3 flex gap-2 opacity-0 translate-y-1 transition group-hover:opacity-100 group-hover:translate-y-0">
+            {secondaryHref && (
               <a
-                href={primaryHref}
+                href={secondaryHref}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={primaryLabel}
-                className="grid h-10 w-10 place-items-center rounded-2xl border border-white/15 bg-black/35 backdrop-blur
-                           transition hover:bg-black/55"
+                aria-label={secondaryLabel || "GitHub"}
+                className="grid h-9 w-9 place-items-center rounded-2xl border border-white/15 bg-black/35 backdrop-blur transition hover:bg-black/55"
               >
-                <ExternalLink className="h-5 w-5 text-white" />
+                <Github className="h-4 w-4 text-white" />
               </a>
-
-              {secondaryHref && (
-                <a
-                  href={secondaryHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={secondaryLabel || "Secondary link"}
-                  className="grid h-10 w-10 place-items-center rounded-2xl border border-white/15 bg-black/35 backdrop-blur
-                           transition hover:bg-black/55"
-                >
-                  <Github className="h-5 w-5 text-white" />
-                </a>
-              )}
-            </div>
-
-            {/* bottom title strip */}
-            <div className="absolute bottom-3 left-3 right-3">
-              <div className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3 backdrop-blur">
-                <div className="flex items-center justify-between gap-3">
-                  <h4 className="truncate text-base font-semibold text-white">{title}</h4>
-                  <ArrowUpRight className="h-4 w-4 text-white/70 transition group-hover:translate-x-[2px] group-hover:-translate-y-[2px]" />
-                </div>
-              </div>
-            </div>
+            )}
           </div>
 
-          {/* content */}
-          <div className="p-6">
-            <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-              {desc}
-            </p>
-
-            {/* tags */}
-            <div className="mt-4 flex flex-wrap gap-2">
-              {tags.slice(0, 6).map((t) => (
-                <Tag key={t}>{t}</Tag>
-              ))}
+          {/* title */}
+          <div className="absolute bottom-3 left-3 right-3">
+            <div className="flex items-center justify-between gap-2 rounded-2xl border border-white/10 bg-black/35 px-3 py-2 backdrop-blur">
+              <h4 className="truncate text-sm font-semibold text-white">
+                {title}
+              </h4>
+              <ArrowUpRight className="h-4 w-4 text-white/75 transition group-hover:-translate-y-[1px] group-hover:translate-x-[1px]" />
             </div>
+          </div>
+        </div>
 
-            {/* CTAs */}
-            <div className="mt-6 flex flex-wrap gap-3">
+        {/* Content */}
+        <div className="p-4">
+          <p className="text-sm leading-relaxed text-zinc-700 line-clamp-2 dark:text-zinc-300">
+            {desc}
+          </p>
+
+          {/* tags (single-line, scrollable) */}
+          <div className="mt-3 -mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {tags.slice(0, 8).map((t) => (
+              <div key={t} className="shrink-0">
+                <Tag>{t}</Tag>
+              </div>
+            ))}
+          </div>
+
+          {/* CTAs */}
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Magnetic>
+              <a href={primaryHref} target="_blank" rel="noreferrer">
+                <Button className="h-10 px-4 text-sm">
+                  <span className="mr-2 inline-flex">
+                    <ExternalLink className="h-4 w-4" />
+                  </span>
+                  {primaryLabel}
+                </Button>
+              </a>
+            </Magnetic>
+
+            {secondaryLabel && secondaryHref && (
               <Magnetic>
-                <a href={primaryHref} target="_blank" rel="noreferrer">
-                  <Button>
+                <a href={secondaryHref} target="_blank" rel="noreferrer">
+                  <Button variant="soft" className="h-10 px-4 text-sm">
                     <span className="mr-2 inline-flex">
-                      <ExternalLink className="h-4 w-4" />
+                      <Github className="h-4 w-4" />
                     </span>
-                    {primaryLabel}
+                    {secondaryLabel}
                   </Button>
                 </a>
               </Magnetic>
-
-              {secondaryLabel && secondaryHref && (
-                <Magnetic>
-                  <a href={secondaryHref} target="_blank" rel="noreferrer">
-                    <Button variant="soft">
-                      <span className="mr-2 inline-flex">
-                        <Github className="h-4 w-4" />
-                      </span>
-                      {secondaryLabel}
-                    </Button>
-                  </a>
-                </Magnetic>
-              )}
-            </div>
+            )}
           </div>
         </div>
+
+        {/* subtle hover ring */}
+        <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-transparent transition group-hover:ring-zinc-900/10 dark:group-hover:ring-white/10" />
       </Card>
     </motion.div>
   );

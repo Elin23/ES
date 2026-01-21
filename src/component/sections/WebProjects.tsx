@@ -5,7 +5,7 @@ import ProjectCard from "../projects/ProjectCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import SectionTitle from "../ui/SectionTiltle";
 
-const PAGE_SIZE = 4;
+const PAGE_SIZE = 6;
 
 function clamp(n: number, min: number, max: number) {
   return Math.max(min, Math.min(max, n));
@@ -17,7 +17,6 @@ export default function WebProjects() {
   const totalPages = Math.max(1, Math.ceil(projects.length / PAGE_SIZE));
   const [page, setPage] = useState(1);
 
-  // إذا تغير عدد المشاريع (مثلاً تعدّلي البيانات) نضمن الصفحة ضمن الحدود
   useEffect(() => {
     setPage((p) => clamp(p, 1, totalPages));
   }, [totalPages]);
@@ -50,7 +49,7 @@ export default function WebProjects() {
         />
 
         {/* Grid */}
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {pageItems.map((p) => (
             <ProjectCard
               key={p.title}
